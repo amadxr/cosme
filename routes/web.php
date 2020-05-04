@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('admin')->group(function () {
+    Route::prefix('steps')->group(function () {
+        Route::get('/', 'StepController@index')->name('admin-home');
+        Route::get('/create', 'StepController@create')->name('create-step');
+        Route::get('/show/{step}', 'StepController@show');
+    });
+});
