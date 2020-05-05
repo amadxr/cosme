@@ -1922,6 +1922,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     step: {
@@ -1947,10 +1948,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -37633,13 +37630,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card rounded-pill mb-3" }, [
+  return _c("div", { staticClass: "card mb-3" }, [
     _c("div", { staticClass: "card-body" }, [
       _c("div", { staticClass: "float-left" }, [
         _vm._v("\n            " + _vm._s(_vm.step.text) + "\n            "),
-        _c("span", { staticClass: "badge badge-primary badge-pill" }, [
-          _vm._v("M")
-        ])
+        _vm.step.multiple_select
+          ? _c("span", { staticClass: "badge badge-primary badge-pill" }, [
+              _vm._v("M")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.step.multiple_select
+          ? _c("span", { staticClass: "badge badge-primary badge-pill" }, [
+              _vm._v("S")
+            ])
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "float-right" }, [
@@ -37702,30 +37707,18 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v(" "),
-      _vm.steps.length > 0
-        ? _c("div", { staticClass: "d-flex justify-content-around" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1)
-          ])
-        : _vm._e(),
+      _c("h1", { staticClass: "display-1" }, [_vm._v("Steps")]),
       _vm._v(" "),
       _vm._l(_vm.steps, function(step) {
         return _c("step-component", { key: step.id, attrs: { step: step } })
-      })
+      }),
+      _vm._v(" "),
+      _vm._m(0)
     ],
     2
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "float-left" }, [
-      _c("h1", { staticClass: "display-1" }, [_vm._v("Steps")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

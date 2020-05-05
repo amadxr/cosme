@@ -5,15 +5,11 @@
             <p class="lead">To create your first step click the button below.</p>
             <a class="btn btn-success btn-lg" href="create-step" role="button">Create</a>
         </div>
-        <div class="d-flex justify-content-around" v-if="steps.length > 0">
-            <div class="float-left">
-                <h1 class="display-1">Steps</h1>
-            </div>
-            <div class="float-right">
-                <a class="btn btn-success btn-lg" href="create-step" role="button">Create</a>
-            </div>            
-        </div>
+        <h1 class="display-1">Steps</h1>                          
         <step-component v-for="step in steps" :step="step" :key="step.id"/>
+        <div class="float-right">
+            <a class="btn btn-success btn-lg" href="create-step" role="button">Create</a>
+        </div>  
     </div>
 </template>
 
